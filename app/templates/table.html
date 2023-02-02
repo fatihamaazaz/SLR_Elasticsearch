@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search engine - index</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style_1.css')}}" />
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <script type="text/javascript" src="../static/col.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Scientific Search Engine
+  </h1>
+  <h2> Number of Documents : {{result.hits.total.value}} </h2>
+
+<section style="padding: 50px">
+    <!--for demo wrap-->
+    <!--<h1>Fixed Table header</h1>-->
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th style="width:50%">Title</th>
+            <th style="width:20%">Authors</th>
+            <th style="width:10%">Document type</th>
+            <th style="width:10%">Content</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          {% for item in result.hits.hits %}
+          <tr>
+            <td style="cursor: pointer; width:50%;">{{ item._source.Title }}</td>
+            <td style="cursor: pointer; width:20%;">{{ item._source.Authors }} </td>
+            <td style="cursor: pointer; width:10%;">{{ item._source['Document Type'] }}</td>
+            <td style="cursor: pointer; width:10%;"><a href="/data/{{item._id}}"> <i class="fas fa-external-link-alt" style="font-size: 1.5em;"></i></a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  
+
+
+</body>
+
+</html>

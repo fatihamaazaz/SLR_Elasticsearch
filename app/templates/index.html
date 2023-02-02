@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search engine</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style_2.css')}}" />
+    <!--<link rel="stylesheet" href="style.css" />-->
+
+</head>
+
+<body>
+    <h1>Scientific Search Engine
+    </h1>
+    <h2>- Diabetic retinopathy diagnosis -</h2>
+    <div class="container">
+    <form class="search-box" method="POST">
+        <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text"  name="search-query" class="input-search" placeholder="Type to Search...">
+    </form>
+    </div>
+</body>
+
+</html>
